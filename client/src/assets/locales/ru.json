@@ -1,0 +1,99 @@
+{
+	"messages": {
+		"login": {
+			"text": "Metaversal Payment System",
+			"success": "Авторизация успешна"
+		},
+		"networks": {
+			"telegram": "Telegram",
+			"discord": "Discord",
+			"twitter": "Twitter",
+			"email": "Email",
+			"instagram": "Instagram",
+			"github": "GitHub"
+		},
+		"actions": {
+			"loginWith": "Войти с помощью:",
+			"connectWallet": "Подключить кошелек"
+		},
+		"menu": {
+			"home": "Главная",
+			"transactionHistory": "Транзакции",
+			"nft": "NFT",
+			"settings": "Настройки",
+			"support": "Поддержка",
+			"about": "О нас",
+			"guide": "Руководство",
+			"giftShop": "Подарки"
+		},
+		"main": {
+			"totalBalance": "Общий баланс",
+			"stakingReward": "Вознаграждение",
+			"moreInfo": "Подробнее",
+			"asset": "Актив",
+			"balance": "Баланс",
+			"operation": "Операция"
+		},
+		"stake": {
+			"stakeAmount": "Сумма ставки",
+			"maxDelegable": "Max delegable",
+			"unstakingPeriod": "Unstaking period"
+		},
+		"buttons": {
+			"close": "Закрыть",
+			"send": "Отправить",
+			"deposit": "Депозит",
+			"exchange": "Обмен",
+			"stake": "Ставка",
+			"unstake": "Возврат",
+			"claim": "Клейм"
+		},
+		"auth": {
+			"login": "Вход",
+			"signUp": "Регистрация",
+			"loginWithGoogle": "Войти с Google",
+			"loggingIn": "Авторизация..."
+		},
+		"about": {
+			"social": "Социальные сети",
+			"documentation": "Документация",
+			"docsLink": "Документация Sputnik Network",
+			"tokenomicsLink": "Токеномика $SIGNAL"
+		},
+		"settings": {
+			"main": {
+				"currency": "Валюта",
+				"language": "Язык",
+				"addresses": "Адреса",
+				"manage": "Настройки профиля",
+				"contacts": "Контакты",
+				"notifications": "Уведомления"
+			}
+		},
+		"support": {
+			"support": "Поддержка",
+			"email": "Email",
+			"emailPlaceholder": "Введите ваш e-mail или оставьте поле пустым, чтобы получить ответ в личных сообщениях",
+			"message": "Сообщение"
+		},
+		"nfts": {
+			"header": {
+				"my": "Мои NFT",
+				"exchange": "Обмен"
+			}
+		}
+	},
+	"numberFormats": {
+		"currency-rounded": {
+			"style": "decimal",
+			"notation": "standard",
+			"maximumFractionDigits": 0
+		},
+		"currency": {
+			"style": "decimal",
+			"notation": "standard",
+			"minimumFractionDigits": 2,
+			"maximumFractionDigits": 2
+		}
+	}
+}

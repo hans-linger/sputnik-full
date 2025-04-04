@@ -1,0 +1,36 @@
+$border-color: #c0c0c0;
+$active-border-color: #f0f0f0;
+
+$button-hover-bg: #e0e0e0;
+$button-active-border: #e980ff;
+$button-text-color: #f0f0f0;
+$button-active-text-color: #101010;
+
+$button-active-color: #B930F8;
+
+:root {
+	--menu-size: 200px;
+	--menu-fontsize: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+	:root {
+		--test-background: #f00;
+	}
+}
+
+@media only screen and (min-width: 801px) {
+	:root {
+		--test-background: #00f;
+	}
+}
+
+.isMobile {
+	--menu-size: 140px;
+	--menu-fontsize: 12px;
+}
+
+$menu-size: var(--menu-size);
+$menu-fontsize: var(--menu-fontsize);
+
+$test-background: var(--test-background);

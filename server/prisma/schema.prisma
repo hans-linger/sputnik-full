@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model ServerStatus {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  lastCoinUpdate DateTime @default(now())
+}
+
+type TwitterProfile {
+  accountId   String
+  username    String
+  displayName String
+  photos      String[]
+}
+
+type GoogleProfile {
+  id          String
+  displayName String
+  photos      String[]
+  name        GoogleName
+}
+
+type GoogleName {
+  givenName  String
+  familyName String
+}
+
+type GithubProfile {
+  id          String
+  displayName String
+  username    String
+  profileUrl  String
+  photos      String[]
+}
+
+type TelegramProfile {
+  id        String
+  firstName String
+  lastName  String
+  username  String
+  photos    String[]
+}
+
+type Balance {
+  denom  String
+  amount Float
+}
+
+model Account {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  address   String
+  token     String
+  email     String?
+  password  String?
+  twitter   TwitterProfile?
+  google    GoogleProfile?
+  github    GithubProfile?
+  telegram  TelegramProfile?
+  addresses ChainAddress[]
+  nfts      Nft[]
+}
+
+model Coin {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  assetId         String
+  name            String
+  usdRate         Float
+  // addresses       ChainAddress[] @relation(fields: [chainAddressIds], references: [id])
+  chainAddressIds String[] @db.ObjectId
+}
+
+type ChainAddress {
+  chainId  String
+  address  String
+  balances Balance[]
+  // coins      Coin[]    @relation(fields: [coinId], references: [id])
+  // coinId     String[]  @db.ObjectId
+  // accounts   Account[] @relation(fields: [accountIds], references: [id])
+  // accountIds String[]  @db.ObjectId
+}
+
+model Nft {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  chainId        String
+  tokenId        String
+  collectionAddr String
+  name           String
+  description    String?
+  imageUrl       String
+  ownerAddress   String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime? @updatedAt
+  owner          Account?  @relation(fields: [ownerId], references: [id])
+  ownerId        String?   @db.ObjectId
+}
+
+model NftTransaction {
+  id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+  chainId                 String
+  senderAddress           String
+  sentCollectionAddr      String
+  sentTokenId             String
+  recipientAddress        String
+  recipientCollectionAddr String
+  receivedTokenId         String
+  createdAt               DateTime @default(now())
+}
+
+model NftCollection {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  chainId        String
+  collectionAddr String
+  name           String
+  description    String
+  image          String?
+  offers         Offer[]
+  bargains       Bargain[]
+}
+
+model OfferFilter {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  collectionAddr String?
+}
+
+model Offer {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  chainId       String
+  senderAddress String
+  collectionId  String        @db.ObjectId
+  collection    NftCollection @relation(fields: [collectionId], references: [id])
+  tokenId       String
+  approved      Boolean       @default(false)
+  bargain       Bargain?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Bargain {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  offerId       String        @unique @db.ObjectId
+  offer         Offer         @relation(fields: [offerId], references: [id])
+  senderAddress String
+  collectionId  String        @db.ObjectId
+  collection    NftCollection @relation(fields: [collectionId], references: [id])
+  tokenId       String
+  approved      Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}

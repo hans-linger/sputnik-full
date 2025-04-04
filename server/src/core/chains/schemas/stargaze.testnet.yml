@@ -1,0 +1,7 @@
+overwrite: true
+schema: 'https://constellations-api.testnet.stargaze-apis.com/graphql'
+generates:
+  ./src/core/chains/types/stargaze.testnet.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"

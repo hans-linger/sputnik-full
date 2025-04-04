@@ -1,0 +1,104 @@
+{
+	"messages": {
+		"login": {
+			"text": "Metaversal Payment System",
+			"success": "Login successful"
+		},
+		"networks": {
+			"telegram": "Telegram",
+			"discord": "Discord",
+			"twitter": "Twitter",
+			"email": "Email",
+			"instagram": "Instagram",
+			"github": "GitHub"
+		},
+		"actions": {
+			"loginWith": "Login with:",
+			"connectWallet": "Connect wallet"
+		},
+		"menu": {
+			"home": "Home",
+			"transactionHistory": "Transaction history",
+			"nft": "NFT",
+			"settings": "Settings",
+			"support": "Support",
+			"about": "About us",
+			"guide": "Guide",
+			"giftShop": "Gift shop"
+		},
+		"main": {
+			"totalBalance": "Total balance",
+			"stakingReward": "Staking reward",
+			"moreInfo": "More info",
+			"asset": "Asset",
+			"balance": "Balance",
+			"operation": "Operation"
+		},
+		"stake": {
+			"stakeAmount": "Stake amount",
+			"maxDelegable": "Max delegable",
+			"unstakingPeriod": "Unstaking period"
+		},
+		"buttons": {
+			"close": "Close",
+			"send": "Send",
+			"deposit": "Deposit",
+			"exchange": "Exchange",
+			"stake": "Stake",
+			"unstake": "Unstake",
+			"claim": "Claim"
+		},
+		"auth": {
+			"login": "Log in",
+			"signUp": "Sign up",
+			"loginWithGoogle": "Login with Google",
+			"loggingIn": "Logging in..."
+		},
+		"about": {
+			"social": "Social media",
+			"documentation": "Documentation",
+			"docsLink": "Sputnik Network Docs",
+			"tokenomicsLink": "$SIGNAL Tokenomics"
+		},
+		"settings": {
+			"main": {
+				"currency": "Currency",
+				"language": "Language",
+				"addresses": "Addresses",
+				"manage": "Manage account",
+				"contacts": "Contacts",
+				"notifications": "Notifications"
+			}
+		},
+		"support": {
+			"support": "Support",
+			"email": "Email",
+			"emailPlaceholder": "Enter your e-mail, or leave it empty to get the answer via direct message",
+			"message": "Message"
+		},
+		"transactions": {
+			"title": "Transaction history",
+			"sentTo": "Sent to",
+			"receivedFrom": "Received from"
+		},
+		"nfts": {
+			"header": {
+				"my": "My NFT",
+				"exchange": "Exchange"
+			}
+		}
+	},
+	"numberFormats": {
+		"currency-rounded": {
+			"style": "decimal",
+			"notation": "standard",
+			"maximumFractionDigits": 0
+		},
+		"currency": {
+			"style": "decimal",
+			"notation": "standard",
+			"minimumFractionDigits": 2,
+			"maximumFractionDigits": 2
+		}
+	}
+}

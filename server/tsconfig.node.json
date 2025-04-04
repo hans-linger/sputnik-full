@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"module": "Node16",
+
+		"types": ["@types/node"],
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true
+	}
+}
